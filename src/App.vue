@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+ <v-app>
+  <v-main class="ma-0 pa-0">
+    <v-container class="ma-0 pa-0" fluid>
+      <Timeline />
+    </v-container>
+  </v-main>
+ </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Timeline from './views/Timeline'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Timeline
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  outline: 0;
+}
+
+.v-main {
+  background: #f5f5f5 !important;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 </style>
