@@ -1,17 +1,32 @@
 <template>
   <header class="main-header">
     <div class="content">
-      <h1>Timeline</h1>
+      <h1>LineTime</h1>
       <div>
-        <nav>{{description}}</nav>
+        <nav>Data e hora atual é {{currentDate}} em millesegundos</nav>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
-  props: ['name', 'description']
+  props: ['name', 'description'],
+  data: () => ({ currentDate: 0 }),
+  methods: {
+    updateCurrentDate () {
+      this.currentDate = moment().valueOf()
+    }
+  },
+  mounted () {
+    this.currentDate = moment().valueOf()
+    this.intervalValue = setInterval(this.updateCurrentDate, 1000)
+  },
+  destroyed () {
+    clearInterval(this.intervalValue)
+  }
 }
 </script>
 

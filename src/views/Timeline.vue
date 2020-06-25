@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header name="Timeline" description="Data e hora atual é 1592780034 em millesegundos"/>
+    <Header/>
     <RangeSlider> </RangeSlider>
   </div>
 </template>
